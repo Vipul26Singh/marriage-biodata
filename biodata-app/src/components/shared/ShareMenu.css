@@ -1,0 +1,60 @@
+.sh-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.sh-btn {
+  background: linear-gradient(135deg, #2a6b3a, #20a078);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: opacity 0.15s;
+}
+
+.sh-btn:hover {
+  opacity: 0.85;
+}
+
+.sh-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.sh-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background: #1e1208;
+  border: 1px solid #3a2810;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 10;
+  min-width: 120px;
+  box-shadow: 0 4px 16px #000a;
+}
+
+.sh-opt {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  background: none;
+  border: none;
+  color: #d4c8b0;
+  font-size: 12px;
+  font-family: 'Lora', serif;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.sh-opt:hover {
+  background: #3a2810;
+  color: #e8c87a;
+}

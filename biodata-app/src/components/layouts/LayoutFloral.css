@@ -1,0 +1,194 @@
+.lf-sheet {
+  width: 680px;
+  min-height: 960px;
+  background: var(--bg);
+  position: relative;
+  box-shadow: 0 8px 60px #000000aa;
+}
+
+.lf-custom-bg {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.lf-border-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.lf-border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.lf-border-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  pointer-events: none;
+}
+
+.lf-border-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  pointer-events: none;
+}
+
+.lf-corner {
+  position: absolute;
+  pointer-events: none;
+}
+
+.lf-corner-tl {
+  top: 4px;
+  left: 4px;
+}
+
+.lf-corner-tr {
+  top: 4px;
+  right: 4px;
+  transform: scaleX(-1);
+}
+
+.lf-corner-bl {
+  bottom: 4px;
+  left: 4px;
+  transform: scaleY(-1);
+}
+
+.lf-corner-br {
+  bottom: 4px;
+  right: 4px;
+  transform: scale(-1, -1);
+}
+
+.lf-inner {
+  padding: 46px 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.lf-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 33px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.lf-rose-divider {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 16px;
+}
+
+.lf-pf-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.lf-pf-img {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 6px var(--accent-soft);
+}
+
+.lf-pf-ph {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  border: 2px dashed var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 28px;
+  opacity: 0.25;
+}
+
+.lf-p-sec {
+  margin-bottom: 14px;
+}
+
+.lf-p-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.lf-p-grid.lf-two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.lf-p-ch {
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 7px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--accent-border);
+  letter-spacing: 0.5px;
+}
+
+.lf-p-kv {
+  display: flex;
+  margin-bottom: 4px;
+  align-items: baseline;
+}
+
+.lf-p-key {
+  color: var(--primary);
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.lf-p-sep {
+  color: var(--accent);
+  margin: 0 5px;
+  font-size: 11px;
+}
+
+.lf-p-val {
+  color: #4a4030;
+}
+
+.lf-p-val.lf-empty {
+  color: #ccc;
+  font-style: italic;
+  font-size: 10.5px;
+}
+
+.lf-s-hr {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-border), transparent);
+  margin: 13px 0;
+}
+
+.lf-footer {
+  margin-top: 26px;
+}
+
+.lf-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 60px;
+  color: var(--primary);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 0;
+}

@@ -1,0 +1,156 @@
+.le-sheet {
+  width: 680px;
+  min-height: 960px;
+  background: var(--bg);
+  position: relative;
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.3);
+}
+
+.le-custom-bg {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.le-border-outer {
+  position: absolute;
+  inset: 10px;
+  border: 2px solid;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.le-border-inner {
+  position: absolute;
+  inset: 16px;
+  border: 1px solid;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.le-inner {
+  padding: 46px 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.le-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+}
+
+.le-swirl-divider {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 16px;
+}
+
+.le-diamond-ornament {
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.le-pf-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.le-pf-img {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.le-pf-ph {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  border: 2px dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  opacity: 0.25;
+}
+
+.le-s-hr {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  opacity: 0.2;
+  margin: 14px 0;
+}
+
+.le-p-sec {
+  margin-bottom: 14px;
+}
+
+.le-p-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.le-p-grid.le-two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.le-p-ch-wrap {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.le-p-ch {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.le-p-kv {
+  display: flex;
+  margin-bottom: 4px;
+  align-items: baseline;
+}
+
+.le-p-key {
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.le-p-sep {
+  margin: 0 5px;
+  font-size: 11px;
+}
+
+.le-p-val {
+  color: #4a4030;
+}
+
+.le-p-val.le-empty {
+  color: #ccc;
+  font-style: italic;
+  font-size: 10.5px;
+}
+
+.le-footer {
+  margin-top: 26px;
+}
+
+.le-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 60px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 0;
+}

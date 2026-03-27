@@ -1,0 +1,75 @@
+/* ── Theme panel ── */
+.tmpl-row {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #3a2810;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tmpl-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all .15s;
+}
+.tmpl-dot.sel {
+  border-color: #e8c87a;
+  box-shadow: 0 0 0 2px #c9972a44;
+}
+
+/* Custom theme colors */
+.custom-colors {
+  padding: 10px 16px 12px;
+  border-bottom: 1px solid #3a2810;
+}
+.custom-colors .section-label {
+  font-size: 9px;
+  color: #7a6040;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+/* Layout picker */
+.layout-picker {
+  padding: 10px 16px 12px;
+  border-bottom: 1px solid #3a2810;
+}
+.layout-picker .section-label {
+  font-size: 9px;
+  color: #7a6040;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.layout-card {
+  background: #110900;
+  border: 1px solid #3a2810;
+  border-radius: 6px;
+  padding: 10px 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .15s;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+  color: #9a8468;
+}
+.layout-card:hover {
+  border-color: #c9972a66;
+  color: #c9972a;
+  background: #1e120844;
+}
+.layout-card.active {
+  border-color: #c9972a;
+  color: #e8c87a;
+  background: #6b3a1433;
+  box-shadow: 0 0 0 1px #c9972a44;
+}

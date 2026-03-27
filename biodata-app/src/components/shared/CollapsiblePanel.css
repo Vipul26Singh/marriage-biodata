@@ -1,0 +1,32 @@
+.panel-hd {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid #3a2810;
+  cursor: pointer;
+  user-select: none;
+}
+
+.panel-hd:hover {
+  background: #1e120844;
+}
+
+.panel-lbl {
+  flex: 1;
+  font-size: 11px;
+  color: #d4b87a;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.panel-arr {
+  font-size: 10px;
+  color: #7a6040;
+  transition: transform 0.2s;
+}
+
+.panel-arr.open {
+  transform: rotate(90deg);
+}

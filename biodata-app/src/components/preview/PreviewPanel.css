@@ -1,0 +1,31 @@
+.pp-preview {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px;
+  background: #090602;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.pp-preview::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pp-preview::-webkit-scrollbar-thumb {
+  background: #3a2810;
+  border-radius: 3px;
+}
+
+.pp-loading {
+  width: 680px;
+  min-height: 960px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7a6040;
+  font-size: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  background: #fdf8f0;
+  box-shadow: 0 8px 60px #000000aa;
+}

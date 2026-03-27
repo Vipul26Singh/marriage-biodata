@@ -1,0 +1,38 @@
+/* ── Data panel ── */
+.prof-th {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #c9972a44;
+}
+.ed-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 14px;
+}
+.ed-body::-webkit-scrollbar { width: 4px; }
+.ed-body::-webkit-scrollbar-thumb { background: #3a2810; border-radius: 2px; }
+
+.add-sec {
+  margin: 6px 14px 14px;
+  background: linear-gradient(135deg, #261a0c, #1a1007);
+  border: 1px solid #c9972a33;
+  border-radius: 8px;
+  padding: 10px;
+  color: #c9972a;
+  font-size: 13px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  width: calc(100% - 28px);
+  transition: all .2s;
+}
+.add-sec:hover { border-color: #c9972a77; }
+
+.save-load-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 10px 16px 12px;
+  border-bottom: 1px solid #3a2810;
+}

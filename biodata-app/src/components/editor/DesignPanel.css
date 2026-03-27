@@ -1,0 +1,72 @@
+/* ── Design panel ── */
+.g-set {
+  padding: 10px 16px 12px;
+  border-bottom: 1px solid #3a2810;
+}
+.g-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+.g-lbl {
+  font-size: 11px;
+  color: #9a8468;
+  min-width: 58px;
+}
+.g-inp {
+  flex: 1;
+  background: #110900;
+  border: 1px solid #3a2810;
+  border-radius: 5px;
+  padding: 5px 9px;
+  color: #d4c8b0;
+  font-size: 12px;
+  outline: none;
+  font-family: 'Cormorant Garamond', serif;
+}
+.g-inp:focus { border-color: #c9972a55; }
+.g-btn {
+  background: #261a0c;
+  border: 1px dashed #4a3020;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #9a8468;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.g-btn:hover { border-color: #c9972a66; color: #c9972a; }
+
+.design-section-label {
+  font-size: 9px;
+  color: #7a6040;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+.typo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.typo-group-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+.typo-group-label span {
+  font-size: 9px;
+  color: #7a6040;
+}
+
+.watermark-set {
+  padding: 10px 16px 12px;
+  border-bottom: 1px solid #3a2810;
+}

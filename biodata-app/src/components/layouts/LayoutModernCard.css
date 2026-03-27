@@ -1,0 +1,152 @@
+/* Modern Card Layout — cards with left accent border, banner header with photo */
+
+.lmc-sheet {
+  width: 680px;
+  min-height: 960px;
+  background: #f5f3ef;
+  position: relative;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);
+}
+
+.lmc-custom-bg {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* ── Banner ─────────────────────────────── */
+.lmc-banner {
+  position: relative;
+  z-index: 1;
+  padding: 32px 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.lmc-banner-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.lmc-banner-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.lmc-banner-photo-ph {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  opacity: 0.3;
+}
+
+.lmc-banner-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffffee;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.lmc-banner-line {
+  width: 60px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+/* ── Body ───────────────────────────────── */
+.lmc-body {
+  position: relative;
+  z-index: 1;
+  padding: 24px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Card ───────────────────────────────── */
+.lmc-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 18px 22px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid;
+}
+
+.lmc-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.lmc-grid.lmc-two {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ── Section heading ────────────────────── */
+.lmc-ch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.lmc-ch-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 8px;
+  flex-shrink: 0;
+}
+
+/* ── Key-value (stacked, not side-by-side) */
+.lmc-kv {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0ede8;
+}
+
+.lmc-kv:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.lmc-key {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.lmc-val {
+  color: #333;
+  font-size: 13px;
+}
+
+.lmc-val.lmc-empty {
+  color: #bbb;
+  font-style: italic;
+  font-size: 11px;
+}

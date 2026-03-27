@@ -1,0 +1,130 @@
+.pem-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pem-dialog {
+  background: #1e1409;
+  border: 1px solid #4a3020;
+  border-radius: 14px;
+  padding: 20px 22px;
+  width: 376px;
+  font-family: 'Lora', serif;
+  box-shadow: 0 24px 80px #000;
+}
+
+.pem-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  color: #e8c87a;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.pem-canvas {
+  display: block;
+  margin: 0 auto;
+  cursor: grab;
+  border-radius: 8px;
+  background: #0a0604;
+  user-select: none;
+  touch-action: none;
+}
+
+/* Shape toggle buttons */
+.pem-shapes {
+  display: flex;
+  gap: 8px;
+  margin: 13px 0 10px;
+}
+
+.pem-shape-btn {
+  flex: 1;
+  padding: 7px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 12px;
+}
+
+.pem-shape-btn--active {
+  background: #6b3a14;
+  border: 1px solid #c9972a;
+  color: #e8c87a;
+}
+
+.pem-shape-btn--inactive {
+  background: #261a0c;
+  border: 1px solid #3a2810;
+  color: #7a6040;
+}
+
+/* Slider rows */
+.pem-slider {
+  margin: 8px 0;
+}
+
+.pem-slider-header {
+  font-size: 10px;
+  color: #7a6040;
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pem-slider-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pem-slider-value {
+  color: #9a8468;
+}
+
+.pem-slider input[type="range"] {
+  width: 100%;
+  accent-color: #c9972a;
+}
+
+/* Help text */
+.pem-help {
+  font-size: 10px;
+  color: #5a4020;
+  text-align: center;
+  margin: 10px 0 14px;
+}
+
+/* Action buttons */
+.pem-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.pem-cancel {
+  flex: 1;
+  padding: 9px 0;
+  background: transparent;
+  border: 1px solid #3a2810;
+  border-radius: 7px;
+  color: #7a6040;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pem-confirm {
+  flex: 2;
+  padding: 9px 0;
+  background: linear-gradient(135deg, #8b4a1a, #c9972a);
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}

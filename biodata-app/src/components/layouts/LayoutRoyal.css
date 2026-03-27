@@ -1,0 +1,156 @@
+.lr-sheet {
+  width: 680px;
+  min-height: 960px;
+  background: var(--bg);
+  position: relative;
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lr-custom-bg {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.lr-header {
+  width: 100%;
+  min-height: 80px;
+  padding: 16px 40px 14px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lr-header-crest {
+  margin-bottom: 4px;
+}
+
+.lr-header-title {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.lr-header-line {
+  width: 60px;
+  height: 2px;
+  margin-top: 8px;
+  opacity: 0.5;
+}
+
+.lr-body {
+  padding: 24px 50px 46px;
+  position: relative;
+  z-index: 1;
+}
+
+.lr-pf-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.lr-pf-img {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.lr-pf-ph {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  border: 2px dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  opacity: 0.25;
+}
+
+.lr-sec-divider {
+  height: 1px;
+  margin: 16px 0;
+}
+
+.lr-p-sec {
+  margin-bottom: 14px;
+}
+
+.lr-p-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.lr-p-grid.lr-two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.lr-p-ch-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--accent);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.lr-p-ch {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.lr-p-kv {
+  display: flex;
+  margin-bottom: 4px;
+  align-items: baseline;
+}
+
+.lr-p-key {
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.lr-p-sep {
+  margin: 0 5px;
+  font-size: 11px;
+}
+
+.lr-p-val {
+  color: #4a4030;
+}
+
+.lr-p-val.lr-empty {
+  color: #ccc;
+  font-style: italic;
+  font-size: 10.5px;
+}
+
+.lr-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+  opacity: 0.5;
+}
+
+.lr-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 60px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 0;
+}

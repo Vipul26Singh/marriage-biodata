@@ -1,0 +1,147 @@
+.lct-sheet {
+  width: 680px;
+  min-height: 960px;
+  background: var(--bg);
+  position: relative;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+}
+
+.lct-custom-bg {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.lct-layout {
+  display: flex;
+  min-height: 960px;
+  position: relative;
+  z-index: 1;
+}
+
+.lct-sidebar {
+  width: 30%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.lct-pf-row {
+  margin-bottom: 20px;
+}
+
+.lct-pf-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.lct-pf-ph {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.lct-sidebar-title {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.lct-sidebar-line {
+  width: 30px;
+  height: 2px;
+  margin: 12px 0;
+  opacity: 0.5;
+}
+
+.lct-sidebar-decor {
+  margin-top: auto;
+  opacity: 0.6;
+}
+
+.lct-content {
+  flex: 1;
+  padding: 46px 24px 46px 28px;
+}
+
+.lct-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 16px 0;
+}
+
+.lct-p-sec {
+  margin-bottom: 14px;
+}
+
+.lct-p-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.lct-p-grid.lct-two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.lct-p-ch {
+  margin-bottom: 8px;
+  padding-left: 10px;
+  border-left: 3px solid;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.lct-p-kv {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: baseline;
+}
+
+.lct-p-key {
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.lct-p-sep {
+  margin: 0 5px;
+  font-size: 11px;
+}
+
+.lct-p-val {
+  color: #555;
+}
+
+.lct-p-val.lct-empty {
+  color: #ccc;
+  font-style: italic;
+  font-size: 10.5px;
+}
+
+.lct-watermark {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 50px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 0;
+}
