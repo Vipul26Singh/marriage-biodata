@@ -12,14 +12,23 @@ export default function DataPanel() {
   const profileRef = useRef();
   const importRef = useRef();
 
-  const { title, profilePic, showProfile, sections } = state;
+  const { title, profilePic, profilePicOriginal, showProfile, sections } = state;
 
   const handleProfilePic = (e) => {
     const file = e.target.files[0];
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = (ev) => dispatch({ type: "SET_PROFILE_PIC", payload: ev.target.result });
+    reader.onload = (ev) => {
+      // Open photo editor with the uploaded image
+      dispatch({ type: "SET_PHOTO_EDITOR", payload: { src: ev.target.result, isProfile: true } });
+    };
     reader.readAsDataURL(file);
+  };
+
+  const handleEditProfilePic = () => {
+    if (profilePicOriginal) {
+      dispatch({ type: "SET_PHOTO_EDITOR", payload: { src: profilePicOriginal, isProfile: true } });
+    }
   };
 
   const handleSave = () => {
@@ -74,7 +83,10 @@ export default function DataPanel() {
                 {profilePic ? "Change" : "+ Upload Photo"}
               </button>
               {profilePic && (
-                <button className="g-btn" onClick={() => dispatch({ type: "SET_PROFILE_PIC", payload: "" })} style={{ color: "#e05c5c", borderColor: "#e05c5c44" }}>
+                <button className="g-btn" onClick={handleEditProfilePic}>Edit</button>
+              )}
+              {profilePic && (
+                <button className="g-btn" onClick={() => dispatch({ type: "SET_PROFILE_PIC", payload: { cropped: "", original: "" } })} style={{ color: "#e05c5c", borderColor: "#e05c5c44" }}>
                   ✕
                 </button>
               )}

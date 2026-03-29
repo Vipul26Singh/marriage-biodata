@@ -42,11 +42,15 @@ function AppInner() {
 
   // Photo editor confirm handler
   const handlePhotoConfirm = ({ src, shape, originalSrc }) => {
-    const { secId, ci, slotIdx } = state.photoEditor;
-    dispatch({
-      type: "SET_PHOTO",
-      payload: { secId, ci, slotIdx, photo: { src, shape, originalSrc } },
-    });
+    if (state.photoEditor.isProfile) {
+      dispatch({ type: "SET_PROFILE_PIC", payload: { cropped: src, original: originalSrc } });
+    } else {
+      const { secId, ci, slotIdx } = state.photoEditor;
+      dispatch({
+        type: "SET_PHOTO",
+        payload: { secId, ci, slotIdx, photo: { src, shape, originalSrc } },
+      });
+    }
     dispatch({ type: "SET_PHOTO_EDITOR", payload: null });
   };
 
@@ -54,13 +58,11 @@ function AppInner() {
     <>
       {/* Photo editor overlay */}
       {state.photoEditor && (
-        <div className="photo-editor-overlay">
-          <PhotoEditorModal
-            src={state.photoEditor.src}
-            onConfirm={handlePhotoConfirm}
-            onCancel={() => dispatch({ type: "SET_PHOTO_EDITOR", payload: null })}
-          />
-        </div>
+        <PhotoEditorModal
+          src={state.photoEditor.src}
+          onConfirm={handlePhotoConfirm}
+          onCancel={() => dispatch({ type: "SET_PHOTO_EDITOR", payload: null })}
+        />
       )}
 
       {/* Mobile tab bar */}

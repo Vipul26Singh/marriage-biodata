@@ -101,6 +101,7 @@ const initialState = {
   layout: "classic",
   title: "Marriage Biodata",
   profilePic: "",
+  profilePicOriginal: "",
   showProfile: true,
   showBorder: true,
   themeOpen: false,
@@ -159,7 +160,11 @@ function biodataReducer(state, action) {
       return { ...state, title: action.payload };
 
     case "SET_PROFILE_PIC":
-      return { ...state, profilePic: action.payload };
+      return {
+        ...state,
+        profilePic: action.payload.cropped || action.payload,
+        profilePicOriginal: action.payload.original || action.payload.cropped || action.payload,
+      };
 
     case "TOGGLE_PROFILE":
       return { ...state, showProfile: !state.showProfile };

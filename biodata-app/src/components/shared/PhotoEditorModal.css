@@ -16,6 +16,8 @@
   width: 376px;
   font-family: 'Lora', serif;
   box-shadow: 0 24px 80px #000;
+  position: relative;
+  z-index: 3001;
 }
 
 .pem-title {
@@ -34,6 +36,11 @@
   background: #0a0604;
   user-select: none;
   touch-action: none;
+  position: relative;
+  z-index: 1;
+}
+.pem-canvas:active {
+  cursor: grabbing;
 }
 
 /* Shape toggle buttons */

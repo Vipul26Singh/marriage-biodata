@@ -24,18 +24,31 @@ export default function PhotoEditorModal({ src, onConfirm, onCancel }) {
     img.src = src;
   }, [src]);
 
+  const offsetRef = useRef(offset);
+  const zoomRef = useRef(zoom);
+  const angleRef = useRef(angle);
+  const shapeRef = useRef(shape);
+  offsetRef.current = offset;
+  zoomRef.current = zoom;
+  angleRef.current = angle;
+  shapeRef.current = shape;
+
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas || !imgRef.current || !ready) return;
     const ctx = canvas.getContext("2d");
     const img = imgRef.current;
+    const o = offsetRef.current;
+    const z = zoomRef.current;
+    const a = angleRef.current;
+    const s = shapeRef.current;
     ctx.clearRect(0, 0, CV, CV);
 
     // Draw image with transform
     ctx.save();
-    ctx.translate(CV/2 + offset.x, CV/2 + offset.y);
-    ctx.rotate(angle);
-    ctx.scale(zoom, zoom);
+    ctx.translate(CV/2 + o.x, CV/2 + o.y);
+    ctx.rotate(a);
+    ctx.scale(z, z);
     ctx.drawImage(img, -img.naturalWidth/2, -img.naturalHeight/2);
     ctx.restore();
 
@@ -44,7 +57,7 @@ export default function PhotoEditorModal({ src, onConfirm, onCancel }) {
     ctx.fillStyle = "rgba(0,0,0,0.58)";
     ctx.beginPath();
     ctx.rect(0, 0, CV, CV);
-    if (shape === "circle") {
+    if (s === "circle") {
       ctx.arc(CV/2, CV/2, CR/2, 0, Math.PI*2, true);
     } else {
       ctx.rect(CV/2 - CR/2, CV/2 - CR/2, CR, CR);
@@ -56,7 +69,7 @@ export default function PhotoEditorModal({ src, onConfirm, onCancel }) {
     ctx.save();
     ctx.strokeStyle = "rgba(255,255,255,0.85)";
     ctx.lineWidth = 1.5;
-    if (shape === "circle") {
+    if (s === "circle") {
       ctx.beginPath(); ctx.arc(CV/2, CV/2, CR/2, 0, Math.PI*2); ctx.stroke();
     } else {
       ctx.strokeRect(CV/2 - CR/2, CV/2 - CR/2, CR, CR);
@@ -66,7 +79,7 @@ export default function PhotoEditorModal({ src, onConfirm, onCancel }) {
     // Rule-of-thirds grid
     ctx.save();
     ctx.beginPath();
-    if (shape === "circle") ctx.arc(CV/2, CV/2, CR/2, 0, Math.PI*2);
+    if (s === "circle") ctx.arc(CV/2, CV/2, CR/2, 0, Math.PI*2);
     else ctx.rect(CV/2 - CR/2, CV/2 - CR/2, CR, CR);
     ctx.clip();
     ctx.strokeStyle = "rgba(255,255,255,0.15)";
@@ -78,21 +91,31 @@ export default function PhotoEditorModal({ src, onConfirm, onCancel }) {
       ctx.beginPath(); ctx.moveTo(CV/2-CR/2, y); ctx.lineTo(CV/2+CR/2, y); ctx.stroke();
     }
     ctx.restore();
-  }, [offset, zoom, angle, shape, ready]);
+  }, [ready]);
 
-  useEffect(() => { draw(); }, [draw]);
+  // Redraw on state changes
+  useEffect(() => { draw(); }, [draw, offset, zoom, angle, shape]);
 
   const getXY = (e) => e.touches
     ? { x: e.touches[0].clientX, y: e.touches[0].clientY }
     : { x: e.clientX, y: e.clientY };
 
+  const rafId = useRef(null);
   const onDown = (e) => { e.preventDefault(); dragging.current = true; last.current = getXY(e); };
   const onMove = (e) => {
     e.preventDefault();
     if (!dragging.current) return;
     const p = getXY(e);
-    setOffset(o => ({ x: o.x + p.x - last.current.x, y: o.y + p.y - last.current.y }));
+    const dx = p.x - last.current.x;
+    const dy = p.y - last.current.y;
     last.current = p;
+    // Update offset ref immediately and schedule a draw + state sync
+    offsetRef.current = { x: offsetRef.current.x + dx, y: offsetRef.current.y + dy };
+    if (rafId.current) cancelAnimationFrame(rafId.current);
+    rafId.current = requestAnimationFrame(() => {
+      draw();
+      setOffset({ ...offsetRef.current });
+    });
   };
   const onUp = () => { dragging.current = false; };
   const onWheel = (e) => {
