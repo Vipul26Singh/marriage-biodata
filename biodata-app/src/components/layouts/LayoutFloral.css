@@ -80,7 +80,6 @@
 }
 
 .lf-title {
-  font-family: 'Cormorant Garamond', serif;
   font-size: 33px;
   font-weight: 600;
   text-align: center;
@@ -136,11 +135,11 @@
 }
 
 .lf-p-ch {
-  font-family: 'Cormorant Garamond', serif;
   margin-bottom: 7px;
   padding-bottom: 4px;
   border-bottom: 1px solid var(--accent-border);
   letter-spacing: 0.5px;
+  text-align: center;
 }
 
 .lf-p-kv {

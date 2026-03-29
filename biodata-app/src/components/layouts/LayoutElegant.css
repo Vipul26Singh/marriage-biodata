@@ -36,7 +36,6 @@
 }
 
 .le-title {
-  font-family: 'Cormorant Garamond', serif;
   font-size: 32px;
   font-weight: 600;
   text-align: center;
@@ -109,7 +108,6 @@
 }
 
 .le-p-ch {
-  font-family: 'Cormorant Garamond', serif;
   letter-spacing: 1px;
   margin-bottom: 2px;
 }

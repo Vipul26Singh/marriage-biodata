@@ -25,7 +25,7 @@ export default function DesignPanel() {
     customBg, bgOpacity, bgBlur, bgSize, bgPosition,
     marginTop, marginLeft, marginRight,
     brTL, brTR, brBL, brBR,
-    typo, fontFamily, language, watermark,
+    typo, fontFamily, language, watermark, valColor, template,
   } = state;
 
   const handleBgUpload = (e) => {
@@ -159,6 +159,17 @@ export default function DesignPanel() {
           onChange={(v) => setTypo({ valSize: v })} />
         <SliderRow label="Spacing" min={0.8} max={2.5} step={0.05} value={typo.valLH}
           onChange={(v) => setTypo({ valLH: v })} />
+        <div className="g-row">
+          <span className="g-lbl">Color</span>
+          <input type="color" value={valColor || template.primary}
+            onChange={(e) => dispatch({ type: "SET_VAL_COLOR", payload: e.target.value })}
+            style={{ width: 32, height: 26, border: "1px solid #3a2810", borderRadius: 4, background: "none", cursor: "pointer", padding: 0 }} />
+          <span style={{ fontSize: 11, color: "#9a8468" }}>{valColor || "Theme"}</span>
+          {valColor && (
+            <button className="g-btn" style={{ padding: "2px 8px", fontSize: 9 }}
+              onClick={() => dispatch({ type: "SET_VAL_COLOR", payload: "" })}>Reset</button>
+          )}
+        </div>
       </div>
 
       {/* Font family */}

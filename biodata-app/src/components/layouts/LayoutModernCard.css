@@ -101,6 +101,7 @@
 .lmc-ch {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   margin-bottom: 10px;
   letter-spacing: 0.3px;

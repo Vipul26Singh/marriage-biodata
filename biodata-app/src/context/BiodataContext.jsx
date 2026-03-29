@@ -122,6 +122,7 @@ const initialState = {
   TYPO_DEFAULTS,
   fontFamily: "lora",
   language: "en",
+  valColor: "",
   watermark: { text: "", opacity: 0.15, enabled: false },
   sections: defaultSections,
   activeSection: null,
@@ -194,6 +195,9 @@ function biodataReducer(state, action) {
 
     case "SET_LANGUAGE":
       return { ...state, language: action.payload };
+
+    case "SET_VAL_COLOR":
+      return { ...state, valColor: action.payload };
 
     case "SET_WATERMARK":
       return { ...state, watermark: { ...state.watermark, ...action.payload } };
